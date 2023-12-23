@@ -1,0 +1,280 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3440340188643772002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3440340188643772001}
+  - component: {fileID: 3440340188643772000}
+  m_Layer: 0
+  m_Name: TikTokLiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3440340188643772001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440340188643772002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3440340188643772000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440340188643772002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92b8c1dfcc75c74594bc6166bb12687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasRootObject: 0
+  texCacheSize: 2048
+  autoConnect: 0
+  autoConnectHostId: 
+  settings:
+    Timeout: 20
+    PollingInterval: 2
+    EnableCompression: 0
+    ClientLanguage: en-US
+    SocketBufferSize: 500000
+    RetryOnConnectionFailure: 1
+    SkipRoomInfo: 0
+    HandleExistingMessagesOnConnect: 1
+    DownloadGiftInfo: 1
+    PrintToConsole: 1
+    LogLevel: 7
+    PrintMessageData: 0
+    CheckForUnparsedData: 0
+  onException:
+    m_PersistentCalls:
+      m_Calls: []
+  onConnected:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisconnected:
+    m_PersistentCalls:
+      m_Calls: []
+  onAccessControl:
+    m_PersistentCalls:
+      m_Calls: []
+  onAccessRecall:
+    m_PersistentCalls:
+      m_Calls: []
+  onAlertBoxAuditResult:
+    m_PersistentCalls:
+      m_Calls: []
+  onBarrage:
+    m_PersistentCalls:
+      m_Calls: []
+  onBindingGift:
+    m_PersistentCalls:
+      m_Calls: []
+  onBoostCardMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onBottomMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onCaption:
+    m_PersistentCalls:
+      m_Calls: []
+  onChatMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onControlMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onLivePaused:
+    m_PersistentCalls:
+      m_Calls: []
+  onLiveEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnhandledControlMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onEmoteChat:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnvelope:
+    m_PersistentCalls:
+      m_Calls: []
+  onGameRankNotify:
+    m_PersistentCalls:
+      m_Calls: []
+  onGift:
+    m_PersistentCalls:
+      m_Calls: []
+  onGiftMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onGiftPrompt:
+    m_PersistentCalls:
+      m_Calls: []
+  onGoalUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onImDelete:
+    m_PersistentCalls:
+      m_Calls: []
+  onInRoomBannerMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onLike:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkLayerMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkMicFanTicketMethod:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkMicMethod:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkState:
+    m_PersistentCalls:
+      m_Calls: []
+  onLiveIntro:
+    m_PersistentCalls:
+      m_Calls: []
+  onMarqueeAnnouncement:
+    m_PersistentCalls:
+      m_Calls: []
+  onMemberMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnhandledMemberMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onJoin:
+    m_PersistentCalls:
+      m_Calls: []
+  onSubscribe:
+    m_PersistentCalls:
+      m_Calls: []
+  onMsgDetect:
+    m_PersistentCalls:
+      m_Calls: []
+  onNotice:
+    m_PersistentCalls:
+      m_Calls: []
+  onNotify:
+    m_PersistentCalls:
+      m_Calls: []
+  onPartnershipDropsUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onPartnershipGameOffline:
+    m_PersistentCalls:
+      m_Calls: []
+  onPartnershipPunish:
+    m_PersistentCalls:
+      m_Calls: []
+  onPerception:
+    m_PersistentCalls:
+      m_Calls: []
+  onPoll:
+    m_PersistentCalls:
+      m_Calls: []
+  onRankText:
+    m_PersistentCalls:
+      m_Calls: []
+  onRankUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onRoomMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onRoomUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  onRoomVerify:
+    m_PersistentCalls:
+      m_Calls: []
+  onSocialMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onFollow:
+    m_PersistentCalls:
+      m_Calls: []
+  onShare:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnhandledSocialMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onSpeaker:
+    m_PersistentCalls:
+      m_Calls: []
+  onSubCapsule:
+    m_PersistentCalls:
+      m_Calls: []
+  onSubNotify:
+    m_PersistentCalls:
+      m_Calls: []
+  onSubPinEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onSubscriptionNotify:
+    m_PersistentCalls:
+      m_Calls: []
+  onToast:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnauthorizedMember:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnhandled:
+    m_PersistentCalls:
+      m_Calls: []
+  onGiftBroadcast:
+    m_PersistentCalls:
+      m_Calls: []
+  onHourlyRank:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkMicArmies:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkMicBattle:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkMicBattlePunishFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  onLinkmicBattleTask:
+    m_PersistentCalls:
+      m_Calls: []
+  onOecLiveShopping:
+    m_PersistentCalls:
+      m_Calls: []
+  onQuestionNew:
+    m_PersistentCalls:
+      m_Calls: []
+  onRoomPinMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  onSystemMessage:
+    m_PersistentCalls:
+      m_Calls: []

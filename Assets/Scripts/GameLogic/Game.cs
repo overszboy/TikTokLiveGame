@@ -13,12 +13,23 @@ public class Game : MonoBehaviour
    
     [SerializeField] TikTokLiveReader tikTokLiveReader;
     [SerializeField] TextMeshProUGUI timerTMPRO;
-    [SerializeField] TextMeshProUGUI playerStatsTMPRO;
+    //[SerializeField] TextMeshProUGUI playerStatsTMPRO;
     [SerializeField] TextMeshProUGUI winerNickNameTMPRO;
     [SerializeField] TextMeshProUGUI winerScoreTMPRO;
     [SerializeField] Image  winerImage;
     [SerializeField] GameObject winerUIObject;
     [SerializeField] int roundTime;
+    [Header("Leader Board")]
+    [SerializeField] TextMeshProUGUI t1text;
+    [SerializeField] Image  t1Image;
+    [SerializeField] TextMeshProUGUI t2text;
+    [SerializeField] Image  t2Image;
+    [SerializeField] TextMeshProUGUI t3text;
+    [SerializeField] Image  t3Image;
+    [SerializeField] TextMeshProUGUI t4text;
+    [SerializeField] Image  t4Image;
+    [SerializeField] TextMeshProUGUI t5text;
+    [SerializeField] Image  t5Image;
      public  PlayersStats playersStats;
      private AudioService audioService;
      [Inject]
@@ -99,24 +110,41 @@ private void Start() {
    } 
    IEnumerator UpdatePlayerStatsCorutine() {
        while(true)
-       {
-           var stats= playersStats.GetTopFive();
-           var sb= new StringBuilder();
-           foreach (var item in stats)
-           { 
-               sb.Append($" {item.NickName} ---> {item.Score} \n");
-            
-           }
-           playerStatsTMPRO.text=sb.ToString();
-         yield return new WaitForSeconds(1f);  
-       }
-        
+        {
+            //  var stats= playersStats.GetTopFive();
+            //  var sb= new StringBuilder();
+            //  foreach (var item in stats)
+            //  { 
+            //      sb.Append($" {item.NickName} ---> {item.Score} \n");
+
+            //  }
+            //  playerStatsTMPRO.text=sb.ToString();
+            UpdateLeaderBoard();
+
+            yield return new WaitForSeconds(1f);
+        }
 
 
-   } 
-   
 
-   public void StartRound()
+    }
+
+    private void UpdateLeaderBoard()
+    {
+        var stats = playersStats.GetTopFive();
+
+        t1Image.sprite = stats[0].UserAvatar;
+        t1text.text = $"{stats[0].NickName} --> {stats[0].Score}";
+        t2Image.sprite = stats[1].UserAvatar;
+        t2text.text = $"{stats[1].NickName} --> {stats[1].Score}";
+        t3Image.sprite = stats[2].UserAvatar;
+        t3text.text = $"{stats[2].NickName} --> {stats[2].Score}";
+        t4Image.sprite = stats[3].UserAvatar;
+        t4text.text = $"{stats[3].NickName} --> {stats[3].Score}";
+        t5Image.sprite = stats[4].UserAvatar;
+        t5text.text = $"{stats[4].NickName} --> {stats[4].Score}";
+    }
+
+    public void StartRound()
    { 
      StopAllCoroutines();
      EventBuss.OnRaundStart?.Invoke();
@@ -133,12 +161,6 @@ private void Start() {
       EventBuss.OnRaundOver?.Invoke();
       audioService.PlayWinFx();
       var stats= playersStats.GetTopFive();
-           var sb= new StringBuilder();
-           foreach (var item in stats)
-           { 
-               sb.Append($" {item.NickName} ---> {item.Score} \n");
-            
-           }
         winerUIObject.SetActive(true);
         winerImage.sprite=stats[0].UserAvatar;
         winerNickNameTMPRO.text=stats[0].NickName;

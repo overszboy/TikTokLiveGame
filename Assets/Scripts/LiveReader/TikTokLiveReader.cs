@@ -250,11 +250,16 @@ public class TikTokLiveReader: MonoBehaviour
         /// </summary>
         private void OnLike(TikTokLiveClient sender, Like like)
         {
-            
-            var ball= ballFabric.CreateBall();
+
+             for(int i=1;i<=like.Count;i++)
+           {
+           var ball= ballFabric.CreateBall();
             ball.name=like.Sender.NickName;
             ball.NickName=like.Sender.NickName;
             RequestBallSprite( ball,like.Sender.AvatarThumbnail);
+           }
+            
+            
             
         }
          /// <summary>
@@ -265,19 +270,26 @@ public class TikTokLiveReader: MonoBehaviour
             if(val.ShareCount!=0)
             {
                Debug.Log($"{val.Sender.NickName} share Translation {val.ShareCount} times ");
-            var ball= ballFabric.CreateBall();
+           
+            for(int i=1;i<=2;i++)
+            {
+                 var ball= ballFabric.CreateBall();
             ball.name=val.Sender.NickName;
             ball.NickName=val.Sender.NickName;
             RequestBallSprite( ball,val.Sender.AvatarThumbnail);
+            }
                
             }
             if(val.FollowCount!=0)
             {
                Debug.Log($"{val.Sender.NickName} follow  the streamer ");
-            var ball= ballFabric.CreateBall();
-            ball.name=val.Sender.NickName;
-            ball.NickName=val.Sender.NickName;
-            RequestBallSprite( ball,val.Sender.AvatarThumbnail);
+              for(int i=1;i<=2;i++)
+            { 
+               var ball= ballFabric.CreateBall();
+               ball.name=val.Sender.NickName;
+               ball.NickName=val.Sender.NickName;
+               RequestBallSprite( ball,val.Sender.AvatarThumbnail);
+            }
 
             }
             
@@ -287,10 +299,14 @@ public class TikTokLiveReader: MonoBehaviour
         /// </summary>
         private void OnComment(TikTokLiveClient sender, Chat comment)
         {
+            for(int i=1;i<=2;i++)
+            {
             var ball= ballFabric.CreateBall();
             ball.name=comment.Sender.NickName;
             ball.NickName=comment.Sender.NickName;
             RequestBallSprite( ball,comment.Sender.AvatarThumbnail);
+            }
+            
            
         }
         /// <summary>
@@ -317,8 +333,8 @@ public class TikTokLiveReader: MonoBehaviour
         private void RequestBallSprite(Ball ball, Picture picture)
         {
             
-            Dispatcher.RunOnMainThread(() =>
-            {
+            // Dispatcher.RunOnMainThread(() =>
+            // {
                 mgr.RequestSprite(picture, spr =>
                 {
                     if (ball != null && ball.gameObject != null )
@@ -326,12 +342,12 @@ public class TikTokLiveReader: MonoBehaviour
                          
                          ball.userAvatar.sprite = spr;
                          
-                        ballQueue.Enqueue(ball);
-                        
+                         ballQueue.Enqueue(ball);
+                      
 
                       }  
                 });
-            });
+            // });
         }
         /// <summary>
         /// Updates Status-Panel based on ConnectionState

@@ -171,6 +171,7 @@ public class TikTokLiveReader: MonoBehaviour
             mgr.OnLike -= OnLike;
             mgr.OnChatMessage -= OnComment;
             mgr.OnGift -= OnGift;
+            
         }
         #endregion
 

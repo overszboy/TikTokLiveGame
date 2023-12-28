@@ -34,14 +34,16 @@ public class TikTokLiveReader: MonoBehaviour
         /// <summary>
         /// ScrollRect for Join-Texts
         /// </summary>
-      
+         private BallFabric ballFabric;
+         private Game game ;
+         public Queue<Ball> ballQueue = new Queue<Ball>();
          [Header("ScrollRects")]
 
           /// <summary>
         ///  Fabric 
         /// </summary>
-         private BallFabric ballFabric;
-         public Queue<Ball> ballQueue = new Queue<Ball>();
+         
+         
         
         /// <summary>
         /// Title for Status-Panel
@@ -90,8 +92,9 @@ public class TikTokLiveReader: MonoBehaviour
         /// </summary>
         /// 
      [Inject ]
-     private void Inject( BallFabric _ballFabric) {
+     private void Inject( BallFabric _ballFabric ,Game _game) {
           ballFabric=_ballFabric;
+          game=_game;
         } 
         
         private void Awake() {
@@ -327,15 +330,23 @@ public class TikTokLiveReader: MonoBehaviour
             });
         }
          /// <summary>
-        /// Requests Image from TikTokLive-Manager
+        /// Requests Image from TikTokLive-Manager or Dict with playes stats
         /// </summary>
         /// <param name="ball">SpriteRender used for display</param>
         /// <param name="picture">Data for Image</param>
         private void RequestBallSprite(Ball ball, Picture picture)
         {
             
-            // Dispatcher.RunOnMainThread(() =>
-            // {
+             if (game.playersStats.PlayersAvatarsDict.ContainsKey(ball.NickName))
+             {
+                
+                ball.userAvatar.sprite=game.playersStats.PlayersAvatarsDict[ball.NickName];
+                ballQueue.Enqueue(ball);
+
+             }
+             else 
+             {
+                 
                 mgr.RequestSprite(picture, spr =>
                 {
                     if (ball != null && ball.gameObject != null )
@@ -343,12 +354,15 @@ public class TikTokLiveReader: MonoBehaviour
                          
                          ball.userAvatar.sprite = spr;
                          
-                         ballQueue.Enqueue(ball);
+                        ballQueue.Enqueue(ball);
                       
 
                       }  
                 });
-            // });
+
+             }
+                
+           
         }
         /// <summary>
         /// Updates Status-Panel based on ConnectionState

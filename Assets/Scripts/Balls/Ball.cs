@@ -26,6 +26,7 @@ public class Ball : MonoBehaviour
     private void OnEnable() {
         rnd.x=((float)Random.Range(-200,200))/1000;
         coll.enabled=true;
+        userAvatar.drawMode=SpriteDrawMode.Sliced;
         userAvatar.size=dmSize;
         gameObject.transform.position=gameObject.transform.position +rnd;
        

@@ -133,15 +133,15 @@ private void Start() {
         var stats = playersStats.GetTopFive();
 
         t1Image.sprite = stats[0].UserAvatar;
-        t1text.text = $"{stats[0].NickName} --> {stats[0].Score}";
+        t1text.text = $"--> {stats[0].Score}";
         t2Image.sprite = stats[1].UserAvatar;
-        t2text.text = $"{stats[1].NickName} --> {stats[1].Score}";
+        t2text.text = $"--> {stats[1].Score}";
         t3Image.sprite = stats[2].UserAvatar;
-        t3text.text = $"{stats[2].NickName} --> {stats[2].Score}";
+        t3text.text = $"--> {stats[2].Score}";
         t4Image.sprite = stats[3].UserAvatar;
-        t4text.text = $"{stats[3].NickName} --> {stats[3].Score}";
+        t4text.text = $"--> {stats[3].Score}";
         t5Image.sprite = stats[4].UserAvatar;
-        t5text.text = $"{stats[4].NickName} --> {stats[4].Score}";
+        t5text.text = $"--> {stats[4].Score}";
     }
 
     public void StartRound()
@@ -171,6 +171,7 @@ private void Start() {
       
 
       StartCoroutine(BreakTimerCorutine());
+      tikTokLiveReader.ballQueue.Clear();
      
    }
    

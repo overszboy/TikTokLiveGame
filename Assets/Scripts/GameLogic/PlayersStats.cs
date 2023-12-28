@@ -9,7 +9,9 @@ public class PlayersStats
     private Dictionary<string,int> playersStatsBoard = new();
     private Dictionary<string,Sprite> playersAvatarsDict= new();
 
-    
+    public Dictionary<string,Sprite>  PlayersAvatarsDict
+     {get {return playersAvatarsDict;}
+     private set{}}
     public void UpdatePlayerScore(Ball ball,int val)
     {
             

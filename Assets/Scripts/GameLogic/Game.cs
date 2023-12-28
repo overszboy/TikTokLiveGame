@@ -168,10 +168,10 @@ private void Start() {
          
 
       playersStats.Reset();
-      
+      tikTokLiveReader.ballQueue.Clear();
 
       StartCoroutine(BreakTimerCorutine());
-      tikTokLiveReader.ballQueue.Clear();
+      
      
    }
    

@@ -346,18 +346,16 @@ public class TikTokLiveReader: MonoBehaviour
              }
              else 
              {
-                 
-                mgr.RequestSprite(picture, spr =>
-                {
-                    if (ball != null && ball.gameObject != null )
-                      {
-                         
-                         ball.userAvatar.sprite = spr;
-                         
-                        ballQueue.Enqueue(ball);
-                      
-
-                      }  
+                Dispatcher.RunOnMainThread(() =>
+                {  
+                      mgr.RequestSprite(picture, spr =>
+                    {
+                       if (ball != null && ball.gameObject != null )
+                          {      
+                           ball.userAvatar.sprite = spr;       
+                           ballQueue.Enqueue(ball);
+                           }  
+                    });
                 });
 
              }

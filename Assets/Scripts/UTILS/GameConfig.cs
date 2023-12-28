@@ -10,7 +10,7 @@ public class GameConfig : MonoBehaviour
         Application.targetFrameRate=-1;
 #else
         Debug.unityLogger.logEnabled = false;
-         Application.targetFrameRate=60;
+         Application.targetFrameRate=-1;;
 #endif
     }
 }
